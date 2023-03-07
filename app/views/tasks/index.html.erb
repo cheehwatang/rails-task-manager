@@ -1,7 +1,13 @@
 <h1>Tasks</h1>
 <% @tasks.each do |task| %>
   <input type="checkbox" id="<%= task.title %>" name="<%= task.title %>" <%= task.completed ? 'checked' : '' %>>
-  <label for="<%= task.title %>"><a><%= link_to task.title, task_path(task.id) %></a></label>
+  <label for="<%= task.title %>">
+    <a><%= link_to task.title, task_path(task.id) %></a>
+    <%= link_to "Delete",
+      task_path(task),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+    %>
+  </label>
 <% end %>
 
 <hr>
