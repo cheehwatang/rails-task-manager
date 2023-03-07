@@ -3,3 +3,7 @@
   <input type="checkbox" id="<%= task.title %>" name="<%= task.title %>" <%= task.completed ? 'checked' : '' %>>
   <label for="<%= task.title %>"><a><%= link_to task.title, task_path(task.id) %></a></label>
 <% end %>
+
+<hr>
+
+<%= link_to 'Add a new task', new_task_path %>
