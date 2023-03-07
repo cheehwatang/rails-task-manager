@@ -1,15 +1,16 @@
 <h1>Tasks</h1>
 <% @tasks.each do |task| %>
-  <input type="checkbox" id="<%= task.title %>" name="<%= task.title %>" <%= task.completed ? 'checked' : '' %>>
-  <label for="<%= task.title %>">
-    <a><%= link_to task.title, task_path(task.id) %></a>
-    <%= link_to "Delete",
+  <div class='my-1'>
+    <span><%= task.completed ? ('<i class="fa-regular fa-square-check"></i>').html_safe : ('<i class="fa-regular fa-square"></i>').html_safe %></span>
+    <a><%= link_to task.title, task_path(task.id), class: 'text-decoration-none' %></a>
+    <span> · </span>
+    <%= link_to ('<i class="fa-regular fa-trash-can"></i>').html_safe,
       task_path(task),
-      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?", class: 'text-decoration-none'}
     %>
-  </label>
+  </div>
 <% end %>
 
 <hr>
 
-<%= link_to 'Add a new task', new_task_path %>
+<%= link_to ('<i class="fa-solid fa-plus"></i> Add a new task').html_safe, new_task_path, class: 'text-decoration-none' %>

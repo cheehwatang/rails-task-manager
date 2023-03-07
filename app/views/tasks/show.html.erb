@@ -1,16 +1,15 @@
-<h1><%= @task.title %></h1>
+<div class="d-flex justify-content-between align-items-center">
+  <h1><%= @task.title %></h1>
+  <%= link_to ('<i class="fa-solid fa-pencil"></i> Edit this task').html_safe, edit_task_path, :class => "btn btn-outline-dark" %>
+</div>
 
-<p><%= @task.details %></p>
+<p class='bg-light border border-3 p-4 my-4 rounded'><%= @task.details %></p>
 
 <p>
-  <input type="checkbox" <%= @task.completed ? 'checked' : '' %>>
+  <span><%= @task.completed ? ('<i class="fa-regular fa-square-check"></i>').html_safe : ('<i class="fa-regular fa-square"></i>').html_safe %></span>
   This task is completed
 </p>
 
 <hr>
 
-<%= link_to 'Edit this task', edit_task_path %>
-
-<hr>
-
-<%= link_to 'Back to list', tasks_path %>
+<%= link_to ('<i class="fa-solid fa-clock-rotate-left"></i> Back to list').html_safe, tasks_path, class: 'text-decoration-none' %>
