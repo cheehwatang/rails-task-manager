@@ -1,0 +1,16 @@
+study:
+  title: "Study"
+  details: "Chemistry and Biology"
+  completed: false
+running:
+  title: "Running"
+  details: "30 minutes slow"
+  completed: true
+laundry:
+  title: "Laundry"
+  details: "Wash and air dry"
+  completed: true
+practice_violin:
+  title: "Practice Violin"
+  details: "Focus on scales for 30 minutes"
+  completed: false
