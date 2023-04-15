@@ -1,5 +1,7 @@
 <h1>Task Manager</h1>
 
-<% @tasks.each do |task| %>
-  <%= "Title: #{task.title}, Details: #{task.details}, Completed: #{task.completed}" %>
-<% end %>
+<div class="task-list">
+  <% @tasks.each do |task| %>
+    <p class="task-item"><%= "Title: #{task.title}, Details: #{task.details}, Completed: #{task.completed}" %></p>
+  <% end %>
+</div>
